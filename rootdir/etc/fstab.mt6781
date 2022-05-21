@@ -2,8 +2,8 @@
 #<src>                           <mnt_point>    <type>          <mnt_flags and options>             <fs_mgr_flags>
 
 # Standard Android Mounts
-system                           /system        erofs  ro       wait,avb=vbmeta_system,logical,first_stage_mount
-system                           /system        ext4   ro       wait,avb=vbmeta_system,logical,first_stage_mount
+system                           /system        erofs  ro       wait,avb=vbmeta_system,logical,first_stage_mount,readahead_size_kb=128
+system                           /system        ext4   ro       wait,avb=vbmeta_system,logical,first_stage_mount,readahead_size_kb=128
 vendor                           /vendor        erofs  ro       wait,avb,logical,first_stage_mount
 vendor                           /vendor        ext4   ro       wait,avb,logical,first_stage_mount
 product                          /product       erofs  ro       wait,avb,logical,first_stage_mount
@@ -22,7 +22,7 @@ odm                              /odm           ext4   ro       wait,logical,fir
 /dev/block/by-name/dtbo          /dtbo          emmc   defaults defaults
 
 # Data
-/dev/block/by-name/userdata      /data          f2fs   noatime,nosuid,nodev,discard,noflush_merge,fsync_mode=nobarrier,reserve_root=134217,resgid=1065,inlinecrypt wait,check,formattable,quota,reservedsize=128m,latemount,checkpoint=fs,fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized,keydirectory=/metadata/vold/metadata_encryption,fsverity,fscompress
+/dev/block/by-name/userdata      /data          f2fs   noatime,nosuid,nodev,discard,noflush_merge,fsync_mode=nobarrier,reserve_root=134217,resgid=1065,inlinecrypt wait,check,formattable,quota,reservedsize=128m,latemount,checkpoint=fs,fileencryption=aes-256-xts:aes-256-cts:v2+inlinecrypt_optimized,keydirectory=/metadata/vold/metadata_encryption,fsverity,fscompress,readahead_size_kb=128
 /dev/block/by-name/cache         /cache         ext4   noatime,nosuid,nodev,noauto_da_alloc,discard wait,check,formattable
 /dev/block/by-name/metadata      /metadata      ext4   noatime,nosuid,nodev,discard,data=journal,commit=1 wait,check,formattable,first_stage_mount
 /dev/block/by-name/frp           /persistent    emmc   defaults                                     defaults
