@@ -297,6 +297,7 @@ PRODUCT_ENFORCE_RRO_TARGETS := *
 PRODUCT_PACKAGES += \
     FrameworksResOverlaySpaced \
     SettingsOverlaySpaced \
+    SettingsProviderResOverlaySpaced \
     SystemUIOverlaySpaced \
     TelephonyOverlaySpaced \
     WifiResOverlaySpaced \
