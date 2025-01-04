@@ -355,7 +355,7 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service.lineage-libperfmgr \
+    android.hardware.power-service.pixel-libperfmgr \
     android.hardware.power@1.2.vendor \
     vendor.mediatek.hardware.mtkpower@1.2-service.stub
 
@@ -453,7 +453,6 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/lineage/compat \
     hardware/google/interfaces \
     hardware/google/pixel \
-    hardware/lineage/interfaces/power-libperfmgr \
     hardware/mediatek \
     hardware/mediatek/libmtkperf_client
 

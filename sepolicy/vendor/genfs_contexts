@@ -15,8 +15,6 @@ genfscon proc /wireless                                                         
 genfscon sysfs /class/oplus_chg                                                             u:object_r:vendor_sysfs_usb_supply:s0
 genfscon sysfs /devices/virtual/oplus_chg                                                   u:object_r:vendor_sysfs_usb_supply:s0
 genfscon sysfs /devices/platform/extcon_usb/extcon                                          u:object_r:sysfs_extcon:s0
-genfscon sysfs /devices/system/cpu/cpufreq/mtk/.cluster_(min|max)_freq                      u:object_r:sysfs_mtk_cpufreq:s0
-genfscon sysfs /kernel/gpu/gpu_(min|max)_clock                                              u:object_r:sysfs_mtk_gpufreq:s0
 
 # Display
 genfscon proc /devinfo/lcd                          u:object_r:vendor_proc_display:s0
@@ -47,11 +45,6 @@ genfscon proc /oplusVersion                         u:object_r:vendor_proc_oplus
 # Performance
 genfscon proc /sys/kernel/sched_assist_enabled       u:object_r:proc_sched_assist:s0
 genfscon proc /sys/kernel/sched_assist_scene         u:object_r:proc_sched_assist:s0
-
-# GPU
-genfscon sysfs /devices/platform/13000000.mali/js_ctx_scheduling_mode u:object_r:vendor_sysfs_gpu:s0
-genfscon sysfs /devices/platform/13000000.mali/js_scheduling_period u:object_r:vendor_sysfs_gpu:s0
-genfscon sysfs /devices/platform/13000000.mali/dvfs_period u:object_r:vendor_sysfs_gpu:s0
 
 # Wakeup
 genfscon sysfs /devices/platform/charger/power_supply/usb/wakeup28                                      u:object_r:sysfs_wakeup:s0
