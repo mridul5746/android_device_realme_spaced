@@ -2288,10 +2288,6 @@ vendor/bin/fuelgauged
 vendor/etc/init/fuelgauged_init.rc
 vendor/lib/libfgauge_gm30.so
 
-# Hotword Enrollment
--my_product/framework/com.android.hotwordenrollment.common.util.jar:system_ext/framework/com.android.hotwordenrollment.common.util.jar
--my_product/priv-app/HotwordEnrollmentOKGoogleCORTEXM4.apk:product/priv-app/HotwordEnrollmentOKGoogleCORTEXM4/HotwordEnrollmentOKGoogleCORTEXM4.apk
-
 # IMS - From Vitamin
 system_ext/bin/vtservice|fb9c50e2341fd82c3ebd789fb1b803a9fef3c660
 system_ext/etc/init/init.vtservice.rc|d1bad63ed1e5dc8cbf02c5ec37022a7753330729
