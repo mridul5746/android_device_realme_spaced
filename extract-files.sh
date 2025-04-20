@@ -100,7 +100,13 @@ function blob_fixup {
             "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "${2}"
             ;;
         system_ext/lib64/libsource.so)
-            grep -q libshim_ui.so "$2" || "$PATCHELF" --add-needed libshim_ui.so "$2"
+            grep -q "libui_shim.so" "$2" || "$PATCHELF" --add-needed "libui_shim.so" "$2"
+            ;;
+        system_ext/lib64/libimsma.so)
+            "${PATCHELF}" --replace-needed "libsink.so" "libsink-mtk.so" "${2}"
+            ;;
+        system_ext/lib64/libsink-mtk.so)
+            grep -q "libaudioclient_shim.so" "$2" || "$PATCHELF" --add-needed "libaudioclient_shim.so" "$2"
             ;;
         vendor/lib*/libmtkcam_stdutils.so)
             "${PATCHELF}" --replace-needed "libutils.so" "libutils-v32.so" "$2"
