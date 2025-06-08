@@ -46,13 +46,13 @@ vendor/etc/init/atcid.rc
 vendor/etc/init/audiocmdservice_atci.rc
 vendor/lib/hw/audio.primary.mt6781.so
 vendor/lib/hw/audio.r_submix.mt6781.so
+vendor/lib/libalsautils.so:vendor/lib/libalsautils-v31.so;FIX_SONAME
 vendor/lib/libMtkSpeechEnh.so
 vendor/lib/lib_bsscore.so
 vendor/lib/lib_iir.so
 vendor/lib/lib_speech_enh.so
 vendor/lib/libadpcmdec_mtk.so
 vendor/lib/libakm.so
-vendor/lib/libalsautils.so:vendor/lib/libalsautils-v31.so;FIX_SONAME
 vendor/lib/libaudio_engineer_test.so
 vendor/lib/libaudio_param_parser-vnd.so
 vendor/lib/libaudiocompensationfilter_vendor.so
@@ -92,11 +92,11 @@ vendor/lib/vendor.mediatek.hardware.bluetooth.audio@2.1.so
 vendor/lib/vendor.mediatek.hardware.bluetooth.audio@2.2.so
 vendor/lib64/hw/audio.primary.mt6781.so
 vendor/lib64/hw/audio.r_submix.mt6781.so
+vendor/lib64/libalsautils.so:vendor/lib64/libalsautils-v31.so;FIX_SONAME
 vendor/lib64/libMtkSpeechEnh.so
 vendor/lib64/lib_bsscore.so
 vendor/lib64/lib_iir.so
 vendor/lib64/lib_speech_enh.so
-vendor/lib64/libalsautils.so:vendor/lib64/libalsautils-v31.so;FIX_SONAME
 vendor/lib64/libaudio_engineer_test.so
 vendor/lib64/libaudio_param_parser-vnd.so
 vendor/lib64/libaudiocompensationfilter_vendor.so
@@ -2292,48 +2292,49 @@ vendor/lib/libfgauge_gm30.so
 -my_product/framework/com.android.hotwordenrollment.common.util.jar:system_ext/framework/com.android.hotwordenrollment.common.util.jar
 -my_product/priv-app/HotwordEnrollmentOKGoogleCORTEXM4.apk:product/priv-app/HotwordEnrollmentOKGoogleCORTEXM4/HotwordEnrollmentOKGoogleCORTEXM4.apk
 
-# IMS - from TECNO-CK9n UP1A.230519.001
-system_ext/bin/vtservice|59adc81ee1ad1f3fb4942cd6e8e7100325002eb2
-system_ext/etc/init/init.vtservice.rc|50a2249906edc06059b443513db47a2ddc0490dc
-system_ext/lib64/libcomutils.so|6d9cd979f33ef01cb26861a38a59e76e1c2a3acb
-system_ext/lib64/libimsma.so|932cbe88083fae23b159bf0e3fe17d7efb93495b
-system_ext/lib64/libimsma_adapt.so|754ad1c39fb4dba9d3eb69ac00112e7600d68580
-system_ext/lib64/libimsma_rtp.so|20ee91f090661fb26e6625ad2fef828441956b82
-system_ext/lib64/libimsma_socketwrapper.so|1f9b83322c41e5b0a7b3130f74a38ddb14f578d8
-system_ext/lib64/libmtk_vt_service.so|302d3ab3c5b3fa0107520fe36098b32cd0a8dd96
-system_ext/lib64/libmtk_vt_wrapper.so|af4d486c516c920ea99c362aebbf04180e96035c
-system_ext/lib64/libsignal.so|0f55bb64c660fe4cda2b695121580b054f026e73
-system_ext/lib64/libsink.so|6bd8c55847116a9a37e223ea2a6e5ce1379e53f7
-system_ext/lib64/libsource.so|6cf6ffcac0c4bf83e3f9685304b0badac9c67f8c
-system_ext/lib64/libvcodec_cap.so|6973253cb2e4ddf365451ed2ac8db9d04085bc4a
-system_ext/lib64/libvcodec_capenc.so|5527525dfcd25169bc380ac53d8181ffa1429c6f
-system_ext/lib64/libvt_avsync.so|632cb05532ef2e022072d91bff3c1ae47c888b7e
-system_ext/lib64/vendor.mediatek.hardware.videotelephony-V1-ndk.so|fc3f645734d4e37fa50b77233d63c7b2eb166014
-system_ext/lib64/vendor.mediatek.hardware.videotelephony@1.0.so|aee568e770a3835af2df2262c9dc8bb2911da324
-vendor/bin/hw/vtservice_hidl|047b26f80b338b7d0869840d243eefebe82d56f5
-vendor/etc/init/init.vtservice_hidl.rc|f2e992214ed5bb99c2c2a135cf1f0996dba8a8a0
-vendor/lib64/hw/vendor.mediatek.hardware.videotelephony@1.0-impl.so|bb9ff554802e7bffb72cf24604109dafcf0019fc
-vendor/lib64/vendor.mediatek.hardware.videotelephony@1.0.so;MODULE_SUFFIX=_vendor|5e228669d2c575e38fc02a13404f31bc22494b87
-
 # ImsService
 -priv-app/ImsService/ImsService.apk|738b92467c052c0e95ee3fd748bde51ab0b90336
 
 # IMS (framework)
+-framework/mediatek-carrier-config-manager.jar;BOOT_JAR
 -framework/mediatek-common.jar;BOOT_JAR
 -framework/mediatek-framework.jar;BOOT_JAR
 -framework/mediatek-ims-base.jar;BOOT_JAR
 -framework/mediatek-ims-common.jar;BOOT_JAR
 -framework/mediatek-ims-extension-plugin.jar;BOOT_JAR
 -framework/mediatek-services.jar;BOOT_JAR
--framework/mediatek-carrier-config-manager.jar;BOOT_JAR
 -framework/mediatek-telecom-common.jar;BOOT_JAR
--framework/mediatek-telephony-common.jar;BOOT_JAR
 -framework/mediatek-telephony-base.jar;BOOT_JAR
+-framework/mediatek-telephony-common.jar;BOOT_JAR
 
-# Radio (IMS)
+# IMS (Native)
+bin/vtservice
+etc/init/init.vtservice.rc
+lib/libmtk_vt_wrapper.so
+lib/libvcodec_cap.so
+lib/libvsim-adaptor-client.so
+lib64/libcomutils.so
+lib64/libimsma.so
+lib64/libimsma_adapt.so
+lib64/libimsma_rtp.so
+lib64/libimsma_socketwrapper.so
+lib64/libmtk_vt_service.so
+lib64/libmtk_vt_wrapper.so
+lib64/libsignal.so
+lib64/libsink.so
+lib64/libsource.so
+lib64/libvcodec_cap.so
+lib64/libvcodec_capenc.so
+lib64/libvsim-adaptor-client.so
+lib64/libvt_avsync.so
+system_ext/lib/vendor.mediatek.hardware.videotelephony@1.0.so
+system_ext/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
+
+# Radio (Ims)
 odm/lib/vendor.oplus.hardware.ims@1.0.so
 odm/lib64/vendor.oplus.hardware.ims@1.0.so
 vendor/bin/hw/vendor.mediatek.hardware.mmagent@1.1-service
+vendor/bin/hw/vtservice_hidl
 vendor/bin/ipsec_mon
 vendor/bin/lbs_hidl_service
 vendor/bin/rcs_volte_stack
@@ -2350,12 +2351,14 @@ vendor/etc/init/init.volte_imsm_93.rc
 vendor/etc/init/init.volte_md_status.rc
 vendor/etc/init/init.volte_stack.rc
 vendor/etc/init/init.volte_ua.rc
+vendor/etc/init/init.vtservice_hidl.rc
 vendor/etc/init/init.xcap.rc
 vendor/etc/init/ipsec_mon.rc
 vendor/etc/init/lbs_hidl_service.rc
 vendor/etc/init/vendor.mediatek.hardware.mmagent@1.1-service.rc
 vendor/etc/init/volte_clientapi_ua.rc
 -vendor/etc/vintf/manifest/lbs_hidl_service@1.0.xml
+vendor/lib/hw/vendor.mediatek.hardware.videotelephony@1.0-impl.so
 vendor/lib/libipsec_ims_shr.so
 vendor/lib/librcs_interface.so
 vendor/lib/librcs_volte_core.so
@@ -2364,6 +2367,8 @@ vendor/lib/libvolte_core_shr.so
 vendor/lib/libvolte_xdmc_shr.so
 vendor/lib/libvt_custom.so
 vendor/lib/vendor.mediatek.hardware.rcs@2.0.so
+vendor/lib/vendor.mediatek.hardware.videotelephony@1.0.so
+vendor/lib64/hw/vendor.mediatek.hardware.videotelephony@1.0-impl.so
 vendor/lib64/lbs_hidl_service-impl.so
 vendor/lib64/libipsec_ims_shr.so
 vendor/lib64/libmmagent.so
@@ -2378,6 +2383,7 @@ vendor/lib64/vendor.mediatek.hardware.clientapi@1.0.so
 vendor/lib64/vendor.mediatek.hardware.lbs@1.0.so
 vendor/lib64/vendor.mediatek.hardware.mmagent@1.0.so
 vendor/lib64/vendor.mediatek.hardware.mmagent@1.1.so
+vendor/lib64/vendor.mediatek.hardware.videotelephony@1.0.so;MODULE_SUFFIX=_vendor
 
 # Keymaster
 vendor/bin/hw/android.hardware.keymaster@4.1-service.trustonic
@@ -2566,8 +2572,8 @@ odm/etc/nfc/libnfc-nxp.conf_21692:vendor/etc/libnfc-nxp.conf|5d44cd26eafb8067c14
 odm/etc/nfc/pnscr/libnfc-nxp-pnscr.conf:odm/etc/libnfc-nxp-pnscr.conf|17d120a63a2d1e63fbb12262807e03c469c2b233
 odm/lib/libpn553_fw.so:odm/lib64/libpn553_fw.so|a8e29cc3ebb2e0df0fb505fc2da9c69a015680fb
 odm/lib/libpn557_fw.so:odm/lib64/libpn557_fw.so|5fd4d17960d258563557d47d70c4d9d11a79fd15
-odm/lib/libpnscr2.so|644ff6bfce0e8b70f928a13826f9c391ea6a01ff
 odm/lib/libsn100u_fw.so:odm/lib64/libsn100u_fw.so|4adda2c9449cdc8f66fc3c653153f8b69c7dc78c
+odm/lib/libpnscr2.so|644ff6bfce0e8b70f928a13826f9c391ea6a01ff
 odm/lib64/libpnscr2.so|966e88324c6cb2cc1460da8fed9866c942995c97
 
 # NVRAM
@@ -2760,12 +2766,12 @@ odm/lib64/libhwm-oplus.so;MODULE_SUFFIX=_odm
 odm/lib64/libmxmafa.so
 odm/lib64/oplus.sensors.ssc.so
 odm/lib64/vendor.oplus.hardware.oplusSensor@1.0.so
+vendor/bin/hw/android.hardware.sensors@2.0-service.multihal-mediatek
+vendor/etc/init/android.hardware.sensors@2.0-service.multihal-mediatek.rc
 vendor/lib/libcam.halsensor.so
 vendor/lib/libcam.utils.sensorprovider.so
 vendor/lib/libhwm.so
 vendor/lib/librgbwlightsensor.so
-vendor/bin/hw/android.hardware.sensors@2.0-service.multihal-mediatek
-vendor/etc/init/android.hardware.sensors@2.0-service.multihal-mediatek.rc
 vendor/lib64/hw/android.hardware.sensors@2.X-subhal-mediatek.so
 vendor/lib64/hw/sensors.mt6781.so
 vendor/lib64/libcam.halsensor.so
