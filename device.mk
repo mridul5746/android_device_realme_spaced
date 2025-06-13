@@ -217,6 +217,12 @@ PRODUCT_PACKAGES += \
 
 $(call inherit-product, hardware/oplus/oplus-fwk/oplus-fwk.mk)
 
+# Kernel
+TARGET_KERNEL_DIR := $(LOCAL_PATH)-kernel
+TARGET_PREBUILT_KERNEL := $(TARGET_KERNEL_DIR)/Image.gz
+
+PRODUCT_COPY_FILES += $(TARGET_PREBUILT_KERNEL):kernel
+
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.light-service.lineage
