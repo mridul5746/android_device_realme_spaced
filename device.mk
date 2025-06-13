@@ -225,7 +225,7 @@ PRODUCT_COPY_FILES += $(TARGET_PREBUILT_KERNEL):kernel
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light-service.lineage
+    android.hardware.light-service.spaced
 
 # Vendor Log Tag
 include $(LOCAL_PATH)/vendor_logtag.mk
