@@ -2341,6 +2341,7 @@ vendor/etc/init/lbs_hidl_service.rc
 vendor/etc/init/vendor.mediatek.hardware.mmagent@1.1-service.rc
 vendor/etc/init/volte_clientapi_ua.rc
 -vendor/etc/vintf/manifest/lbs_hidl_service@1.0.xml
+vendor/lib/hw/vendor.mediatek.hardware.videotelephony@1.0-impl.so
 vendor/lib/libipsec_ims_shr.so
 vendor/lib/librcs_interface.so
 vendor/lib/librcs_volte_core.so
@@ -2350,6 +2351,7 @@ vendor/lib/libvolte_xdmc_shr.so
 vendor/lib/libvt_custom.so
 vendor/lib/vendor.mediatek.hardware.rcs@2.0.so
 vendor/lib/vendor.mediatek.hardware.videotelephony@1.0.so;MODULE_SUFFIX=_vendor
+vendor/lib64/hw/vendor.mediatek.hardware.videotelephony@1.0-impl.so
 vendor/lib64/lbs_hidl_service-impl.so
 vendor/lib64/libipsec_ims_shr.so
 vendor/lib64/libmmagent.so
