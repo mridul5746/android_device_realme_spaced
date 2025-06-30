@@ -93,9 +93,6 @@ on fs
     wait_for_prop hwservicemanager.ready "true"
     mount_all --early
 
-    # Update touchpanel firmware in case we ship newer firmware in /odm
-    write /proc/touchpanel/tp_fw_update 0
-
 on late-fs
     wait_for_prop hwservicemanager.ready "true"
     mount_all --late
@@ -751,15 +748,6 @@ on property:vold.decrypt=trigger_shutdown_framework
     setprop dev.bootcomplete 0
 
 on property:sys.boot_completed=1
-
-    # Disable edge limit control interface
-    write /proc/touchpanel/oplus_tp_limit_enable 0
-
-    # Enable oppo touchpanel direction
-    write /proc/touchpanel/oplus_tp_direction 1
-
-# OTG
-    write /sys/devices/virtual/oplus_chg/usb/otg_switch 1
 
 # Battery info
 on property:persist.vendor.mediatek.fg.disable=1
